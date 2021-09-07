@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  /* For Good css practice box-sizing: inheriting to other part of body; */
+  box-sizing: inherit;
+}
+html {
+  /* font-size: 10px; */
+  /* Converted px to % so on browser if user do zoom in or zoom out they can have same effect */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Josefin' sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color:$text-color;
+  padding: 2rem;
+  box-sizing: border-box;
+}

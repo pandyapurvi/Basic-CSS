@@ -1,0 +1,138 @@
+.card {
+
+	//Functionality
+	perspective: 150rem; /*this is for rotation property*/
+	-moz-perspective: 150rem;
+	position: relative;
+	height: 50rem;
+	&__side {
+		// background-color: $color-primary;
+		// color: black;
+		height: 500px;
+		transition: all 2s;
+		position: absolute;
+		width: 100%;
+		backface-visibility: hidden; /*can see back and front*/
+		border-radius: .3rem;
+		overflow: hidden; /*to make sure border-radius does not over write by img*/
+		box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+
+		&--front {
+			background-color: $color-white;
+			}
+
+		&--back {
+			transform: rotateY(180deg);
+
+			&-1{
+				background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+			}
+			&-2{
+				background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+			}
+			&-3{
+				background-image: linear-gradient(to right bottom, $color-fourth-light, $color-fourth-dark);
+			}
+		}
+	}
+
+	&:hover &__side--front {
+		transform: rotateY(-180deg);
+	}
+
+	&:hover &__side--back {
+		transform: rotateY(0deg);
+	}
+
+	//text detail
+	&__image {
+		height: 23rem;
+		background-size: cover;
+		background-blend-mode: screen;
+		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+		/*As border radius over-write due to clip path so written like this*/
+		border-top-left-radius: .5rem;
+		border-top-right-radius: .5rem;
+		&--1{
+			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), 
+			url("../img/gal-4.jpeg");
+		}
+		&--2{
+			background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), 
+			url("../img/gal-5.jpeg");
+		}
+		&--3{
+			background-image: linear-gradient(to right bottom, $color-fourth-light, $color-fourth-dark), 
+			url("../img/gal-7.jpeg");
+		}
+	}
+
+	&__heading {
+		text-transform: uppercase;
+		font-size: 2rem;
+		font-weight: 700;
+		position: absolute;
+		top: 10rem;
+		right:0rem;
+		width:50%;
+
+	}
+
+	&__heading-span{
+		padding: 1rem 1.5rem;
+		-webkit-box-decoration-break: clone;
+		color: $color-white;
+
+		&--1 {
+			background-color: $color-secondary-light;
+		}
+		&--2 {
+			background-color: $color-tertiary-light;
+		}
+		&--3 {
+			background-color: $color-fourth-light;
+		}
+	}
+	&__detail {
+		ul{
+			list-style: none;
+			padding: 0 10%;
+			
+			li{
+				font-size: 2rem;
+				text-align: center;
+				padding: 1rem;
+
+				&:not(:last-child){
+					border-bottom: 1px solid grey;
+				}
+			}
+
+		}
+	}
+
+	&__cta {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
+		text-align: center;
+
+	}
+	&__price-box {
+		color: $color-white;
+		margin-bottom: 8rem;
+	}
+	&__price-only {
+		font-size: 1.5rem;
+		text-transform: uppercase;
+	}
+
+	&__price-value {
+		font-size: 2.5rem;
+		font-weight: 100;
+
+	}
+}

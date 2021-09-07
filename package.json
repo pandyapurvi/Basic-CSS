@@ -4,7 +4,7 @@
   "description": "Unit notes: 1. Each property has a unique value, suded if nothing is declared 2. Browser specify a root font size for each page. 3. % and relative units are converts to px. 4. % are measured are relative to their root font-size. 5. % are measure are relative to their parent. 6. em are measured to relative parent font-size, if used to specify font. 7. em are measured to currenct font-size, if used to specify length. 8. rem are measured relative to document root font size. 9. vh and vw are % measurement of the viewport.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass":"node-sass sass/main.scss starter/css/style.css -w"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pandyapurvi/Basic-CSS/issues"
   },
-  "homepage": "https://github.com/pandyapurvi/Basic-CSS#readme"
+  "homepage": "https://github.com/pandyapurvi/Basic-CSS#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
 }

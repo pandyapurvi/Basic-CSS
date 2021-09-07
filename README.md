@@ -18,3 +18,8 @@ Unit notes:
 5./themes
 6./abstract
 7./vendors
+
+# Attributes:
+1. [class^="col-"] -> Start with class="col-..."
+2. [class*="col-"] -> Includes "col-" in any class
+3. [class$="col-"] -> Class End with "col-"
